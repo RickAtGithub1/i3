@@ -1,1 +1,2 @@
-# i3
+# Dependencies
+pulseaudio, alsa-lib, alsa-plugins, alsa-utils, fontawesome
