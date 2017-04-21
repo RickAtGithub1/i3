@@ -35,13 +35,26 @@ if ($acpi !~ /: (\w+), (\d+)%/) {
 
 $status = $1;
 $percent = $2;
-$full_text = "$percent%";
-
+$full_text =""; 
 if ($status eq 'Discharging') {
-	$full_text .= ' DIS';
+	if ($percent < 10) {
+		$full_text = '';
+	} elsif ($percent < 20) {
+		$full_text = '';
+	} elsif ($percent < 40) {
+		$full_text = '';
+	} elsif ($percent < 80) {
+		$full_text = '';
+	} else {
+		$full_text = '';
+	}
+
 } elsif ($status eq 'Charging') {
-	$full_text .= '  CHR';
+	$full_text = '';
 }
+
+$full_text .= " $percent%";
+
 
 $short_text = $full_text;
 
